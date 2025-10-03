@@ -13,7 +13,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - name: web
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        - name: hello-world
+          image: nginx:alpine
+          ports:
+            - containerPort: 8080
