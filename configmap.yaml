@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-world-html
+data:
+  index.html: |
+    <html>
+    <body>
+      <h1>Hello World!</h1>
+      <footer>Cluster: ${CLUSTER_NAME}, Node: ${NODE_NAME}</footer>
+    </body>
+    </html>
