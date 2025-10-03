@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-world
+spec:
+  host: hello-world-default.apps.oc.kikitux.net
+  to:
+    kind: Service
+    name: hello-world
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
