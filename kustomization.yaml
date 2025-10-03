@@ -6,6 +6,7 @@ namespace: default
 
 # Resources to deploy
 resources:
+  - configmap.yaml
   - deployment.yaml
   - service.yaml
   - route.yaml
