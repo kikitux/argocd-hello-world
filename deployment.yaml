@@ -32,16 +32,16 @@ spec:
             - name: nginx-conf
               mountPath: /etc/nginx/conf.d/default.conf
               subPath: default.conf
-        volumes:
-          - name: html-volume
-            configMap:
-              name: hello-world-content
-              items:
-                - key: index.html
-                  path: index.html
-          - name: nginx-conf
-            configMap:
-              name: hello-world-content
-              items:
-                - key: default.conf
-                  path: default.conf
+      volumes:
+        - name: html-volume
+          configMap:
+            name: hello-world-content
+            items:
+              - key: index.html
+                path: index.html
+        - name: nginx-conf
+          configMap:
+            name: hello-world-content
+            items:
+              - key: default.conf
+                path: default.conf
