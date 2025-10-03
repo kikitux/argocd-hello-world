@@ -5,7 +5,6 @@ metadata:
   labels:
     app: hello-world
 spec:
-  host: hello-world-default.apps.oc.kikitux.net  # Customize hostname
   to:
     kind: Service
     name: hello-world
