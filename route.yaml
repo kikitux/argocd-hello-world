@@ -11,6 +11,6 @@ spec:
     name: hello-world
     weight: 100
   port:
-    targetPort: 8080      # Service port
+    targetPort: 80        # Service port
   tls:
     termination: edge     # Exposes HTTPS
