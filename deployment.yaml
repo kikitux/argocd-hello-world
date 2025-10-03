@@ -16,4 +16,21 @@ spec:
         - name: hello-world
           image: docker.io/library/nginx:alpine
           ports:
-            - containerPort: 80
+            - containerPort: 80          
+          env:
+            - name: CLUSTER_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.labels['cluster']  # optional, or hardcode label
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          volumeMounts:
+            - name: html-volume
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+      volumes:
+        - name: html-volume
+          configMap:
+            name: hello-world-html
