@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Namespace where app will be deployed
+namespace: default
+
+# Resources to deploy
+resources:
+  - deployment.yaml
+  - service.yaml
+  - route.yaml
+
+# Optional labels applied to all resources
+commonLabels:
+  app: hello-world
